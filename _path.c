@@ -25,7 +25,6 @@ char *_path(char *con, char **environ)
 		if (compare == 0)
 		{
 			return (new_path);
-			break;
 		}
 		else
 		{

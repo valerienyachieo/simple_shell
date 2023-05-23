@@ -12,7 +12,7 @@ char **words(char *line, char *separ)
 	char **tokens;
 	char *word;
 	int j = 0, value = 0;
-	
+
 	value = _strlen(line);
 	tokens = malloc(sizeof(char *) * value);
 	if (tokens == NULL)

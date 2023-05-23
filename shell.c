@@ -17,14 +17,17 @@ int main(int argc, char **argv, char **environ)
 	{
 		child = fork();
 		if (child == -1)
+		{
 			perror("Error: child");
+			return (-1);
+		}
 		value_fd = isatty(STDIN_FILENO);
 		if (child == 0)
 		{
 			if (argc == 1)
 			{
 				if (value_fd != 0)
-					write(1, "#cisfun $ ", 10);
+					write(1, "#cisfun$ ", 9);
 				con = read_lines();
 				if (*con == '\n')
 				{
