@@ -13,7 +13,7 @@ int main(int argc, char **argv, char **environ)
 	pid_t child;
 
 	(void) *argv;
-	while (2)
+	while (1)
 	{
 		child = fork();
 		if (child == -1)
