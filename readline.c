@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * read_line - reads the input
+ * read_lines - reads the input
  * @ch: a flag to identify an exit
  *
  * Return: previously read line
  */
-char *read_line(ssize_t *ch)
+char *read_lines(ssize_t *ch)
 {
 	char *lineptr = NULL;
 	size_t bufsize = 0;

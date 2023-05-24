@@ -1,25 +1,29 @@
 #include "main.h"
 
 /**
- * tokenization - takes in char inputs
- * @inpt: inputs to tokenize
+ * words - function tokenizes and returns the array of strings
+ * @lineptr: What is previously read by the input
+ * @separ: separator to tokenize from
  *
- * Return: tokens
+ * Return: a pointer to pointer of characters
  */
-char **tokenization(char *inpt)
+char **words(char *lineptr, char *separ)
 {
-	char **tokenz = malloc(sizeof(char *));
-	char *token;
-	int indx = 0;
+	char **tokenz;
+	char *word;
+	int j = 0, value = 0;
 
-	token = strtok(inpt, " \t\r\n");
-	while (token != NULL)
+	value = _strlen(lineptr);
+	tokenz = malloc(sizeof(char *) * value);
+	if (tokenz == NULL)
+		return (NULL);
+	word = strtok(lineptr, separ);
+	while (word != NULL)
 	{
-		tokenz[indx] = token;
-		indx++;
-		tokenz = _realloc(tokenz, (indx + 1) * sizeof(char *));
-		token = strtok(NULL, " \t\r\n");
+		tokenz[j] = word;
+		j++;
+		word = strtok(NULL, separ);
 	}
-	tokenz[indx] = NULL;
+	tokenz[j] = NULL;
 	return (tokenz);
 }
