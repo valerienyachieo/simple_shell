@@ -17,6 +17,7 @@ void exec_cmd(char *command, char **environment)
 	if (comparison == 0 && tokens[1] == NULL)
 	{
 		free(tokens);
+		free(command);
 		exit(3);
 	}
 	comparison = _strcmp(tokens[0], "env");

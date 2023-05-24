@@ -17,5 +17,8 @@ char *read_lines()
 		write(1, "\n", 2);
 		exit(3);
 	}
+	if (*con > 0 && ch[con - 1] == '\n')
+		con[ch - 1] = '\0';
+
 	return (con);
 }
