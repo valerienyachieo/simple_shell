@@ -72,7 +72,7 @@ void execute_child_process(int argc, char *argv[], char **environ)
 
 	value_fd = isatty(STDIN_FILENO);
 
-	if (argc == 1)
+	if (argc >= 1)
 	{
 		prompt_and_read_input(&con, &ch, value_fd);
 		if (con == NULL)
